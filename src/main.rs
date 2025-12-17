@@ -11,7 +11,7 @@ struct Point {
 
 impl Point {
     fn area(&self, other: &Point) -> i64 {
-        (1 + self.x - other.x).abs() * (1 + self.y - other.y).abs()
+        (1 + (self.x - other.x).abs()) * (1 + (self.y - other.y).abs())
     }
 }
 
@@ -111,6 +111,43 @@ fn is_inner_rect(p1: &Point, p2: &Point, points: &Vec<Point>) -> bool {
     // println!("Test point for {:?} {:?} {:?} - {}", p1,p2,test_point, is_ir);
     return is_ir;
 }
+
+fn intersect(p0: &Point, p1: &Point, p2: &Point, p3: &Point) -> bool{
+    // does the line (p0, p1) intersect (p2, p3)
+    return false
+}
+
+// fn _main(){
+//     // let filename = "example.txt".to_string();
+//     let filename = "input.txt".to_string();
+//     let points = read_input(filename); 
+
+//     let mut best_p0: Option<Point> = None;
+//     let mut best_p1: Option<Point> = None;
+//     let mut best_area = 0;
+
+//     let point_pairs= iproduct!(points.clone(), points.clone())
+//       .sorted_by(|(a, b), (c,d)| a.area(b).cmp(&c.area(d)));
+//     for (i, (p0, p1)) in point_pairs.enumerate(){
+//         println!("{}", i);
+//         let area = p0.area(&p1);
+//         let mut intersects = false;
+//         for (p2, p3) in iproduct!(points.clone(), points.clone()){
+//             if intersect(&p0, &p1, &p2, &p3){
+//                 intersects = true;
+//             }
+//         }
+//         if !intersects && area > best_area{
+//             best_area = area;
+//             best_p0 = Some(Point { x: p0.x, y: p0.y });
+//             best_p1 = Some(Point { x: p1.x, y: p1.y });
+//             break;
+//         }
+//     }
+
+
+//     println!("{:?} {:?} {}", best_p0, best_p1, best_area)
+// }
 
 fn main() {
     // let filename = "example.txt".to_string();

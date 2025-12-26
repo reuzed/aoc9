@@ -9,6 +9,14 @@ struct Point {
     y: i64,
 }
 
+// // Before:
+// impl Point {
+//     fn area(&self, other: &Point) -> i64 {
+//         (1 + self.x - other.x).abs() * (1 + self.y - other.y).abs()
+//     }
+// }
+
+// After:
 impl Point {
     fn area(&self, other: &Point) -> i64 {
         (1 + (self.x - other.x).abs()) * (1 + (self.y - other.y).abs())
